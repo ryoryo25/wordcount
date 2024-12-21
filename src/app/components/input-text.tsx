@@ -16,7 +16,6 @@ const InputText = ({ text, setText }: Props) => {
 
   return (
     <TextArea
-      className="block mx-auto"
       name="main-input"
       placeholder="カウントするテキストを入力"
       value={text}
