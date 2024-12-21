@@ -61,7 +61,7 @@ export default function Index() {
                   id="count-num-no-nl"
                   name="count-num-no-nl"
                   type="text"
-                  value={text.replaceAll('\r\n', '').replaceAll('\n', '').length}
+                  value={removeNewlines(text).length}
                   readOnly
                 />
               </td>
@@ -73,7 +73,7 @@ export default function Index() {
                     id="count-num-no-sp"
                     name="count-num-no-sp"
                     type="text"
-                    value={text.replaceAll(' ', '').length}
+                    value={removeSpaces(removeNewlines(text)).length}
                     readOnly
                   />
               </td>
@@ -87,4 +87,12 @@ export default function Index() {
 function saveTextInput(e: React.FocusEvent<HTMLTextAreaElement>) {
   const current = e.target.value
   localStorage.setItem(KEY_SAVE_TEXT_INPUT, current)
+}
+
+function removeNewlines(text: string): string {
+  return text.replaceAll('\r\n', '').replaceAll('\n', '')
+}
+
+function removeSpaces(text: string): string {
+  return text.replaceAll(' ', '')
 }
