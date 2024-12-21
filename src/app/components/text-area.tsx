@@ -2,6 +2,8 @@ import React from "react"
 
 type Props = {
   name: string
+  defaultValue?: string
+  value?: string
   placeholder?: string
   disabled?: boolean
   min?: number
@@ -14,12 +16,28 @@ type Props = {
   className?: string
 }
 
-export default function Button({ name, placeholder, disabled, min, max, rows = 5, cols = 30, onChange, onBlur, onLoad, className }: Props) {
+const TextArea = ({
+  name,
+  defaultValue,
+  value,
+  placeholder,
+  disabled,
+  min,
+  max,
+  rows = 5,
+  cols = 30,
+  onChange,
+  onBlur,
+  onLoad,
+  className
+}: Props) => {
   return (
     <textarea
       className={`border border-neutral-400 rounded p-2 resize ${className}`}
       id={name}
       name={name}
+      defaultValue={defaultValue}
+      value={value}
       placeholder={placeholder}
       disabled={disabled}
       minLength={min}
@@ -32,3 +50,5 @@ export default function Button({ name, placeholder, disabled, min, max, rows = 5
     />
   )
 }
+
+export default TextArea

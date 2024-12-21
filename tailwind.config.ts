@@ -1,16 +1,17 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from "tailwindcss";
 import defaultTheme from 'tailwindcss/defaultTheme'
 
-module.exports = {
-  content: ['./components/**/*.tsx', './pages/**/*.tsx'],
+export default {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         'base-color': '#24292F',
       },
       spacing: {
@@ -18,9 +19,6 @@ module.exports = {
       },
       letterSpacing: {
         tighter: '-.04em',
-      },
-      lineHeight: {
-        tight: 1.2,
       },
       fontSize: {
         '5xl': '2.5rem',
@@ -35,11 +33,7 @@ module.exports = {
         sans: ['var(--font-roboto)', 'var(--font-notojp)', ...defaultTheme.fontFamily.sans],
         mono: ['var(--font-roboto-mono)', ...defaultTheme.fontFamily.mono],
       },
-      boxShadow: {
-        sm: '0 5px 10px rgba(0, 0, 0, 0.12)',
-        md: '0 8px 30px rgba(0, 0, 0, 0.12)',
-      },
     },
   },
   plugins: [],
-}
+} satisfies Config;

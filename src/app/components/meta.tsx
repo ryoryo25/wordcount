@@ -1,10 +1,8 @@
-import Head from 'next/head'
-import { SITE_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
-import { url } from '../utils/config'
+import { url } from '@/utils/config'
 
-export default function Meta() {
+const Meta = () => {
   return (
-    <Head>
+    <head>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -33,11 +31,8 @@ export default function Meta() {
       <meta name="msapplication-config" content={url('/favicon/browserconfig.xml')} />
       <meta name="theme-color" content="#ffffff" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta
-        name="description"
-        content={SITE_NAME}
-      />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
-    </Head>
+    </head>
   )
 }
+
+export default Meta
