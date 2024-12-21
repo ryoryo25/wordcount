@@ -4,7 +4,6 @@ import { roboto, robotomono, notojp } from '../utils/font'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { pageview } from '../lib/gtag'
-import { RecoilRoot } from 'recoil'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   // google analytics
@@ -20,10 +19,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   }, [router.events])
 
   return (
-    <RecoilRoot>
-      <div className={`${roboto.variable} ${robotomono.variable} ${notojp.variable} font-sans text-base-color`}>
-        <Component {...pageProps} />
-      </div>
-    </RecoilRoot>
+    <div className={`${roboto.variable} ${robotomono.variable} ${notojp.variable} font-sans text-base-color`}>
+      <Component {...pageProps} />
+    </div>
   )
 }
