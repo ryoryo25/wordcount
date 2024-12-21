@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import { GA_MEASUREMENT_ID } from '../lib/gtag'
-import GoogleAnalytics from '../components/google-analytics'
+import GoogleAnalytics from '../components/googleAnalytics'
 
 export default function Document() {
   return (
