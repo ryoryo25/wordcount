@@ -10,3 +10,7 @@ export const OG_IMAGE_URL = ''
 export const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID || ''
 
 export const KEY_SAVE_TEXT_INPUT = 'WORD_COUNT_TEXT_INPUT'
+export const KEY_SAVE_MODE = 'WORD_COUNT_MODE'
+
+export const MODE_CHARACTERS = 0
+export const MODE_WORDS = 1

@@ -10,9 +10,8 @@ type Props = {
   max?: number
   rows?: number
   cols?: number
-  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
-  onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
-  onLoad?: React.ReactEventHandler
+  onChange?: React.ChangeEventHandler<HTMLTextAreaElement>
+  onBlur?: React.FocusEventHandler<HTMLTextAreaElement>
   className?: string
 }
 
@@ -28,7 +27,6 @@ const TextArea = ({
   cols = 30,
   onChange,
   onBlur,
-  onLoad,
   className
 }: Props) => {
   return (
@@ -46,7 +44,6 @@ const TextArea = ({
       cols={cols}
       onChange={onChange}
       onBlur={onBlur}
-      onLoad={onLoad}
     />
   )
 }
